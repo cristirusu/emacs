@@ -14,7 +14,27 @@
 ;; Set font
 (set-face-attribute 'default nil :font "Anka/Coder" :height 160)
 
+;; Initialize package sources
+(require 'package)
+
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Initialize use-package on non-Linux platforms
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+
 ;; Set theme
+(use-package all-the-icons)
 (use-package kaolin-themes
   :config
   (load-theme 'kaolin-shiva t)
