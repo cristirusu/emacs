@@ -1,7 +1,3 @@
-*
-!.gitignore
-!.emacs.d/
-!.emacs.d/*
 \#*\#
 *~
 auto-save-list
