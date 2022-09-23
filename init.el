@@ -39,3 +39,10 @@
   :config
   (load-theme 'kaolin-shiva t)
   (kaolin-treemacs-theme))
+
+
+;; Load specific custom configs from the elisp directory
+(add-to-list 'load-path "~/.emacs.d/elisp/")
+
+(load-library "vertico-init")
+
